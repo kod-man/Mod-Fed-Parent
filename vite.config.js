@@ -12,7 +12,8 @@ export default defineConfig({
         "./MyButton": "./src/components/Button",
       },
       remotes: {
-        kodman: "http://localhost:4173/assets/remoteEntryChild.js",
+        kodman: "http://localhost:4173/assets/remoteEntryChild1.js",
+        child2: "http://localhost:3173/assets/remoteEntryChild2.js",
       },
       shared: ["react", "react-dom"],
     }),
