@@ -18,6 +18,11 @@ export default defineConfig({
       shared: ["react", "react-dom"],
     }),
   ],
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
   build: {
     modulePreload: false,
     target: "esnext",
