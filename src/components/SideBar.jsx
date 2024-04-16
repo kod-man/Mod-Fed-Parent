@@ -1,40 +1,16 @@
-import {
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerOverlay,
-  Link,
-  useDisclosure,
-} from "@chakra-ui/react";
-import { useRef } from "react";
-
+import { Box, Link as ChakraLink } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
 function DrawerExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef();
-
   return (
-    <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-        Open
-      </Button>
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose} finalFocusRef={btnRef}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
+    <Box w={"450px"} h={"100vh"} bg={"gray.100"}>
+      <ChakraLink display={"block"} as={ReactRouterLink} to="/urun">
+        Urun
+      </ChakraLink>
 
-          <DrawerBody>
-            <Link display={"block"} href="/urun" isExternal>
-              Urun
-            </Link>
-            <Link display={"block"} href="/contact" isExternal>
-              Contact
-            </Link>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </>
+      <ChakraLink display={"block"} as={ReactRouterLink} to="/contact">
+        Contact
+      </ChakraLink>
+    </Box>
   );
 }
 export default DrawerExample;
