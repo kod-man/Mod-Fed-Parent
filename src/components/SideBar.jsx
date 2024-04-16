@@ -19,16 +19,16 @@ function DrawerExample() {
       <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
         Open
       </Button>
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose} finalFocusRef={btnRef}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
 
           <DrawerBody>
-            <Link href="https://chakra-ui.com" isExternal>
+            <Link display={"block"} href="/urun" isExternal>
               Urun
             </Link>
-            <Link href="https://chakra-ui.com" isExternal>
+            <Link display={"block"} href="/contact" isExternal>
               Contact
             </Link>
           </DrawerBody>

@@ -1,16 +1,18 @@
-import Contact from "child2/Contact";
-import Urun from "kodman/Urun";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import MyButton from "./components/Button";
-import DrawerExample from "./components/SideBar";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <DrawerExample />
-      <MyButton />
-      <Urun />
-      <Contact />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="urun" element={<h1>Urun</h1>} />
+          <Route path="contact" element={<h1>Contact</h1>} />
+          <Route path="*" element={<h1>404</h1>} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
